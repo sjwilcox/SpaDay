@@ -62,6 +62,22 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.square1 {
+    height: 50px;
+    width: 50px;
+    background-color: #500EC0;
+}
+.square2 {
+    height: 50px;
+    width: 50px;
+    background-color: #E03807;
+}
+.square3 {
+    height: 50px;
+    width: 50px;
+    background-color: #FD1E57;
+}
 .footer {
   position: absolute;
   bottom: 0;
