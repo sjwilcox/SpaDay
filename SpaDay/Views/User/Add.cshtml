@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Sign Up Form</h1>
+
+@if (ViewBag.error != null)
+{
+    <p>@ViewBag.error</p>
+}
+
+<form method="post" action="/user/">
+    Username:
+    <div class="form-group" style="display:block;">
+        @if (ViewBag.error == null)
+        {
+            <input type="text" name="username" />
+        }
+        else
+        {
+            <input type="text" name="username" value="@ViewBag.username" />
+        }
+    </div>
+
+
+    Email:
+    <div class="form-group" style="display:block;">
+        @if (ViewBag.error == null)
+        {
+            <input type="email" name="email" />
+        }
+        else
+        {
+            <input type="email" name="email" value="@ViewBag.email" />
+        }
+    </div>
+
+    <div class="form-group" >
+        <lable style="display:block;">Password: </lable> 
+        <input type="password" name="password" />
+        <lable style="display:block;">Confirm Password:</lable>
+        <input type="password" name="verify" style="display:block;margin-bottom:5px;"/>
+        <input type='submit' value='Submit'>
+    </div>
+
+      
+</form>
+© 2021 GitHub, Inc.
