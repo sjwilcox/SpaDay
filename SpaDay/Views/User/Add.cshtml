@@ -1,49 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using SpaDay.ViewModels
+
+@model AddUserViewModel
+
 <h1>Sign Up Form</h1>
 
-@if (ViewBag.error != null)
-{
-    <p>@ViewBag.error</p>
-}
 
-<form method="post" action="/user/">
-    Username:
-    <div class="form-group" style="display:block;">
-        @if (ViewBag.error == null)
-        {
-            <input type="text" name="username" />
-        }
-        else
-        {
-            <input type="text" name="username" value="@ViewBag.username" />
-        }
+<form asp-controller="User" asp-action="Add" method="post" >
+    <div  class="form-group" >
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
     </div>
 
-
-    Email:
     <div class="form-group" style="display:block;">
-        @if (ViewBag.error == null)
-        {
-            <input type="email" name="email" />
-        }
-        else
-        {
-            <input type="email" name="email" value="@ViewBag.email" />
-        }
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
     </div>
-
     <div class="form-group" >
-        <lable style="display:block;">Password: </lable> 
-        <input type="password" name="password" />
-        <lable style="display:block;">Confirm Password:</lable>
-        <input type="password" name="verify" style="display:block;margin-bottom:5px;"/>
-        <input type='submit' value='Submit'>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
     </div>
-
-      
+    <div class="form-group" style="display:block;">
+        <label asp-for="VerifyPassword">Confirm Password</label>
+        <input asp-for="VerifyPassword" />
+        <span asp-validation-for="VerifyPassword"></span>
+    </div>
+    <input type="submit" value="Submit" />
 </form>
 © 2021 GitHub, Inc.
